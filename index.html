@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROSPER AI Resume Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PROSPER AI Resume Analyzer</h1>
+        <p>Upload your resume (or paste text) and a ZIP code to get a personalized career intelligence report.</p>
+        
+        <section class="input-section">
+            <h2>1. Provide Your Resume</h2>
+            <div class="file-upload">
+                <label for="resumeFile">Upload Resume (.txt only)</label>
+                <input type="file" id="resumeFile" accept=".txt">
+                <p class="file-info">For PDF/Word, please copy & paste text below.</p>
+            </div>
+            
+            <p class="or-separator">- OR -</p>
+            
+            <div class="text-input">
+                <label for="resumeText">Paste Resume Text:</label>
+                <textarea id="resumeText" rows="15" placeholder="Paste your resume text here..."></textarea>
+            </div>
+        </section>
+
+        <section class="input-section">
+            <h2>2. Your Location</h2>
+            <label for="zipCode">Enter your 5-digit ZIP code:</label>
+            <input type="text" id="zipCode" placeholder="e.g., 90210" maxlength="5">
+        </section>
+
+        <button id="analyzeBtn">Analyze Resume</button>
+
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Analyzing with PROSPER AI... This may take up to 60 seconds.</p>
+        </div>
+
+        <section id="reportSection" class="report-section hidden">
+            <h2>PROSPER Report</h2>
+            <div id="reportOutput" class="report-content">
+                Your personalized report will appear here.
+            </div>
+        </section>
+    </div>
+
+    <!-- Required for Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

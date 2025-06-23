@@ -1,0 +1,33 @@
+# --- Stage 1: Build the React application ---
+# Use a Node.js image to build the frontend
+FROM node:18-alpine AS build
+
+# Set the working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json (if you have it)
+# This step leverages Docker's build cache; only runs if package files change
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of your application code
+COPY . .
+
+# Build the React app for production
+# This command assumes your build script is in package.json and outputs to a `build` folder
+RUN npm run build
+
+# --- Stage 2: Serve the static files with Nginx ---
+# Use a lightweight Nginx image to serve static files
+FROM nginx:alpine
+
+# Copy all static files (HTML, CSS, JS, etc.) into Nginx's public directory
+COPY . /usr/share/nginx/html
+
+# Expose port 80 (Nginx's default for HTTP)
+EXPOSE 80
+
+# Start Nginx in the foreground
+CMD ["nginx", "-g", "daemon off;"]

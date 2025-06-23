@@ -1,0 +1,232 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 2em auto;
+    padding: 2em;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+h1, h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 25px;
+    font-size: 2.2em;
+}
+
+h2 {
+    color: #007bff;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #34495e;
+}
+
+textarea, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.file-upload {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px dashed #007bff;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #f8faff;
+}
+
+.file-input {
+    display: none; /* Hide default file input */
+}
+
+.file-label {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.file-label:hover {
+    background-color: #0056b3;
+}
+
+.file-info {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 10px;
+}
+
+.or-separator {
+    text-align: center;
+    font-weight: bold;
+    color: #7f8c8d;
+    margin: 1em 0;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button#analyzeBtn:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+.input-section {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    border-radius: 5px;
+}
+
+/* Loading Spinner */
+.hidden {
+    display: none !important;
+}
+
+#loading {
+    text-align: center;
+    margin-top: 25px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1em;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Report Output Area */
+.report-section {
+    margin-top: 2em;
+}
+
+.report-content {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 1.5em;
+    min-height: 200px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+}
+
+/* Markdown Styling */
+.report-content h1, .report-content h2, .report-content h3, .report-content h4, .report-content h5, .report-content h6 {
+    color: #0056b3;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+.report-content p, .report-content li {
+    color: #333;
+}
+
+.report-content ul, .report-content ol {
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.report-content li {
+    margin-bottom: 5px;
+}
+
+.report-content hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.report-content pre {
+    background-color: #e9ecef;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
+
+.report-content code {
+    background-color: #e9ecef;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
+
+.error-message {
+    color: #c0392b;
+    font-weight: bold;
+    background-color: #fdd;
+    padding: 1em;
+    border-radius: 5px;
+    border: 1px solid #c0392b;
+}
